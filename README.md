@@ -10,7 +10,7 @@ mkdir --ai 智能客服
 ## 安装
 
 ```bash
-git clone https://github.com/caixinyun/ai-mkdir.git
+git clone https://github.com/caixy-plus/ai-mkdir.git
 cd ai-mkdir
 ./install.sh
 ```
