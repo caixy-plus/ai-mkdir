@@ -9,15 +9,40 @@ mkdir --ai 智能客服
 
 ## 安装
 
+### macOS
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/caixy-plus/ai-mkdir/main/install.sh | sh
+```
+
+`install.sh` 会完成：
+1. `pip install --user .` 安装 `mkai` 命令
+2. 在 `~/.zshrc` 添加 `mkdir --ai` 包装函数，实现自动 cd
+
+### 其他平台（Linux / WSL / ...）
+
+从源码安装：
+
 ```bash
 git clone https://github.com/caixy-plus/ai-mkdir.git
 cd ai-mkdir
-./install.sh
+pip install --user .
 ```
 
-`install.sh` 会：
-1. `pip install --user .` 安装 `mkai` 命令
-2. 在 `~/.zshrc` 添加 `mkdir --ai` 包装函数
+然后手动将以下函数添加到 `~/.bashrc` 或 `~/.zshrc`：
+
+```bash
+mkdir() {
+    if [[ "$1" == "--ai" ]]; then
+        shift
+        eval $(command mkai "$@")
+    else
+        command mkdir "$@"
+    fi
+}
+```
+
+> **依赖**: Python >= 3.9, `requests` 库
 
 ## 配置
 
