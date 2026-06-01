@@ -3,8 +3,25 @@
 `mkdir --ai` — 用自然语言描述项目，AI 自动生成英文目录名，创建并 cd 进入。
 
 ```bash
-mkdir --ai 智能客服
-# → AI 建议 5 个英文名 → 上下键选择 → 创建目录 + 自动 cd
+$ mkdir --ai 智能客服
+
+🤖 Asking anthropic for name suggestions...
+
+Suggestions for: 智能客服
+
+  ▸ ai-customer-service
+    smart-helpdesk
+    chatbot-assist
+    virtual-agent
+    intelligent-support
+
+  ↑↓ select  ↵ confirm  r retry  q quit
+
+  → ai-customer-service
+
+Created: /Users/caixinyun/projects/ai-customer-service
+$ pwd
+/Users/caixinyun/projects/ai-customer-service
 ```
 
 ## 安装
